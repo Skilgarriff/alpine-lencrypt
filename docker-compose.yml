@@ -1,5 +1,7 @@
 version: '2'
 services:
-    le:
+    letsencrypt:
         build: .
-        volumes: le:/etc/letsencrypt/
+        volumes:
+            - ./well-known:/var/www/letsencrypt/
+            - ./config:/etc/letsencrypt
