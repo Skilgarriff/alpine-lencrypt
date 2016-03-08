@@ -7,6 +7,8 @@ RUN apk add --update --no-cache letsencrypt
 
 COPY renewal /var/spool/cron/crontabs/renewal
 
-CMD letsencrypt certonly
+COPY ./entrypoint.sh ./entrypoint.sh
 
-CMD crond -f
+RUN chmod +x ./entrypoint.sh
+
+ENTRYPOINT ["./entrypoint.sh"]
