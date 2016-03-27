@@ -3,3 +3,5 @@ config/csr
 config/keys
 config/live
 config/renewal
+
+.DS_Store
